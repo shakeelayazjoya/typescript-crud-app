@@ -1,13 +1,10 @@
-import mongoose, { Schema, Document } from "mongoose";
+import { Schema, model } from 'mongoose';
 
-interface ITodo extends Document {
-  title: string;
-  completed: boolean;
-}
-
-const todoSchema = new Schema<ITodo>({
+const todoSchema = new Schema({
   title: { type: String, required: true },
   completed: { type: Boolean, default: false },
 });
 
-export const Todo = mongoose.model<ITodo>("Todo", todoSchema);
+const Todo = model('Todo', todoSchema);
+
+export { Todo };

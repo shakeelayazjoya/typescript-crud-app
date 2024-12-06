@@ -1,5 +1,7 @@
+// src/types/todo.ts
+
 export interface Todo {
-  id: string;
+  _id: string; // Add _id to the Todo interface
   title: string;
   completed: boolean;
 }
